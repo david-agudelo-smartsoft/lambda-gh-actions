@@ -24,6 +24,7 @@ jobs:
         run: |
           aws lambda invoke --function-name testlambda index.msj
           cat index.msj
+          ls -la
           if [ -f "index.js" ]; then
             zip -j deploy.zip index.js
           else
