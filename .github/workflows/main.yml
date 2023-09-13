@@ -16,11 +16,11 @@ jobs:
       - name: Configurar AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: AKIA6L3TPAHHI5G4OJMM
-          aws-secret-access-key: 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
+          aws-access-key-id: AKIAVAE7LJRUXX7D3QE5
+          aws-secret-access-key: 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
           aws-region: us-east-1
 
       - name: Deploy
         run: |
           zip -j deploy.zip ./index.js
-          aws lambda update-function-code --function-name testlambda --zip-file fileb://deploy.zip
+          aws lambda update-function-code --function-name test1 --zip-file fileb://deploy.zip
