@@ -20,8 +20,7 @@ jobs:
           aws-secret-access-key: WOCdJ0xBd+qPqxR00YBobxkuIvuvjKUrKwmA8uDh
           aws-region: us-east-1
 
-      - name: Desplegar código a Lambda
+      - name: Deploy
         run: |
-          aws lambda update-function-code 
-            --function-name lambda-gh-actions 
-            --zip-file fileb://index.js
+          zip -j deploy.zip
+          aws lambda update-function-code --function-name lambda-gh-actions --zip-file fileb://deploy.zip
