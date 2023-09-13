@@ -25,16 +25,5 @@ jobs:
           aws lambda invoke --function-name testlambda index.msj
           cat index.msj
           ls -la
-          if [ -f "index.js" ]; then
-            zip -j deploy.zip index.js
-          else
-            echo "El archivo index.js no existe en el directorio de trabajo."
-          fi
-          if [ -f "deploy.zip" ]; then
-          aws lambda update-function-code --function-name testlambda --zip-file fileb://deploy.zip
-          else
-            echo "El archivo deploy.zip no se creó correctamente."
-          fi
-          ls -la deploy.zip
           zip -j deploy.zip
           aws lambda update-function-code --function-name testlambda --zip-file fileb://deploy.zip
