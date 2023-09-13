@@ -24,6 +24,7 @@ jobs:
         run: |
           aws lambda invoke --function-name testlambda index.msj
           cat index.msj
-          ls -la
+          ls -la 
+          ls -la 
           zip -j deploy.zip
           aws lambda update-function-code --function-name testlambda --zip-file fileb://deploy.zip
