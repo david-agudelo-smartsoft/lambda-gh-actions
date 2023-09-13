@@ -16,13 +16,13 @@ jobs:
       - name: Configurar AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: AKIAVAE7LJRUT3SCNO6R
-          aws-secret-access-key: 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
+          aws-access-key-id: AKIA6L3TPAHHDOKWFYUV
+          aws-secret-access-key: 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
           aws-region: us-east-1
 
       - name: Deploy
         run: |
-          aws lambda invoke --function-name lambda-gh-actions index.msj
+          aws lambda invoke --function-name testlambda index.msj
           cat index.msj
           ls -la
           if [ -f "index.js" ]; then
@@ -31,10 +31,10 @@ jobs:
             echo "El archivo index.js no existe en el directorio de trabajo."
           fi
           if [ -f "deploy.zip" ]; then
-          aws lambda update-function-code --function-name lambda-gh-actions --zip-file fileb://deploy.zip
+          aws lambda update-function-code --function-name testlambda --zip-file fileb://deploy.zip
           else
             echo "El archivo deploy.zip no se creó correctamente."
           fi
           ls -la deploy.zip
           zip -j deploy.zip
-          aws lambda update-function-code --function-name lambda-gh-actions --zip-file fileb://deploy.zip
+          aws lambda update-function-code --function-name testlambda --zip-file fileb://deploy.zip
