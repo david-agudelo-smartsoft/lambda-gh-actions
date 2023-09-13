@@ -16,8 +16,8 @@ jobs:
       - name: Configurar AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: AKIAVAE7LJRUT3SCNO6R
+          aws-secret-access-key: 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
           aws-region: us-east-1
 
       - name: Desplegar código a Lambda
