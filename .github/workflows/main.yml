@@ -22,5 +22,7 @@ jobs:
 
       - name: Deploy
         run: |
+          aws lambda invoke --function-name lambda-gh-actions index.msj
+          cat index.msj
           zip -j deploy.zip
           aws lambda update-function-code --function-name lambda-gh-actions --zip-file fileb://deploy.zip
