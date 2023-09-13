@@ -22,6 +22,6 @@ jobs:
 
       - name: Desplegar código a Lambda
         run: |
-          aws lambda update-function-code \
-            --function-name MiFuncionLambda \ # Cambia esto al nombre de tu función Lambda
+          aws lambda update-function-code 
+            --function-name lambda-gh-actions 
             --zip-file fileb://index.js
