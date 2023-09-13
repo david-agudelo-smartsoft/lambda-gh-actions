@@ -19,8 +19,9 @@ jobs:
           aws-access-key-id: AKIA6L3TPAHHI5G4OJMM
           aws-secret-access-key: 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
           aws-region: us-east-1
-
+      - name: Crear archivo ZIP
+        run: |
+          zip -j deploy.zip index.js
       - name: Deploy
         run: |
-          zip -j deploy.zip
           aws lambda update-function-code --function-name testlambda --zip-file fileb://deploy.zip
