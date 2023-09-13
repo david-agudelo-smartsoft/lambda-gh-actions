@@ -16,8 +16,8 @@ jobs:
       - name: Configurar AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: AKIA6L3TPAHHGNLLLQ3I
-          aws-secret-access-key: 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
+          aws-access-key-id: AKIA6L3TPAHHI5G4OJMM
+          aws-secret-access-key: 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
           aws-region: us-east-1
 
       - name: Deploy
